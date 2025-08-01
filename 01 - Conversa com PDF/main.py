@@ -15,12 +15,6 @@ load_dotenv()
 
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
-llm = ChatOpenAI(
-    model = 'gpt-4o-mini',
-    api_key = openai_api_key,
-    temperature = 0,
-)
-
 # --- Configuração da Interface com Streamlit ---
 st.markdown(custom_css, unsafe_allow_html = True)
 
@@ -60,7 +54,10 @@ def processar_pdf_e_criar_chain(pdf_file):
 
     # 4. Criar a cadeia de busca e resposta
     qa_chain = RetrievalQA.from_chain_type(
-        llm = OpenAI(temperature = 0.3), # Adicionando um pouco de criatividade
+        llm = ChatOpenAI(
+            model = 'gpt-4o-mini',
+            api_key = openai_api_key,
+            temperature = .3,), # Adicionando um pouco de criatividade
         chain_type = 'stuff',
         retriever = db.as_retriever()
     )
@@ -108,12 +105,14 @@ if pergunta := st.chat_input('Faça sua pergunta sobre o documento...'):
         with st.chat_message("assistant"):
             with st.spinner("Pensando..."):
                 # AQUI ESTÁ A MUDANÇA: Usamos a qa_chain diretamente!
-                resposta = st.session_state.qa_chain.run(pergunta)
+                response_payload = st.session_state.qa_chain.invoke(pergunta)
+                resposta = response_payload.get('result', 'Não foi possível encontrar uma resposta.')
                 st.write(resposta)
+
         # Adiciona a resposta do assistente ao histórico
         st.session_state.messages.append({"role": "assistant", "content": resposta})
     else:
         # Mensagem de erro se o PDF não foi processado
-        st.session_state.messages.append({"role": "assistant", "content": "Desculpe, você precisa primeiro processar um documento na barra lateral."})
         with st.chat_message("assistant"):
             st.warning("Por favor, faça o upload e processe um documento primeiro.")
+        st.session_state.messages.append({"role": "assistant", "content": "Desculpe, você precisa primeiro processar um documento na barra lateral."})
