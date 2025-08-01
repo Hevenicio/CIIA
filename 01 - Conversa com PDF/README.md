@@ -1,6 +1,8 @@
 
 # 🤖 Projeto: Converse com os seus Documentos
 
+![img](img/chat_pdf.png)
+
 Este projeto é uma aplicação web construída com Streamlit e LangChain que permite aos utilizadores fazer o upload de um documento PDF e interagir com ele através de um chat inteligente. A aplicação extrai o conteúdo do PDF, cria uma base de conhecimento e utiliza um modelo de linguagem da OpenAI para responder a perguntas sobre o documento.
 
 ✨ Funcionalidades
