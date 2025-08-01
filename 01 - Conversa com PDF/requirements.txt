@@ -1,0 +1,5 @@
+python-dotenv==1.1.1
+langchain-community==0.3.27
+langchain-openai==0.3.28
+streamlit==1.47.1
+faiss-cpu==1.11.0.post1
