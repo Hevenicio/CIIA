@@ -1,0 +1,8 @@
+.venv/
+venv/
+.env
+.ocr_env
+.ocr_env/
+ocr_env
+
+__pycache__
