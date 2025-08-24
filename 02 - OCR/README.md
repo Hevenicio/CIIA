@@ -1,7 +1,7 @@
 # 🖼️ Projeto: Extrator de Texto de Imagens (OCR)
 
 <div align="center">
-<img src="img/ocr.png" alt="Demonstração do App" width="950"/>
+<img src="img/ocr.png" alt="Demonstração do App" width="900"/>
 </div>
 
 Este projeto é uma aplicação web construída com **Streamlit** que utiliza **PyTesseract** para extrair texto de imagens. A ferramenta permite que os usuários façam o upload de um ficheiro de imagem, apliquem pré-processamentos básicos e extraiam o conteúdo textual de forma rápida e eficiente.
