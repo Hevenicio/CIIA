@@ -33,7 +33,7 @@ O projeto foi simplificado para facilitar a execução e o entendimento, utiliza
 ├── 📁 .streamlit/
 │   └── 📄 config.toml   # Ficheiro de configuração do tema do Streamlit
 ├── 🖼️ img/
-│   └── 📄 ocr.png       # Imagem de demonstração para o README
+│   └── 📄 chat_pdf.png  # Imagem de demonstração para o README
 ├── 📄 .env              # Ficheiro para armazenar a chave da API (não versionado)
 ├── 📄 .gitignore        # Ficheiro para ignorar ficheiros e pastas no Git
 ├── 📜 main.py           # Script principal que contém toda a lógica da aplicação
