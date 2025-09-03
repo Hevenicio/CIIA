@@ -9,7 +9,7 @@ def main():
     '''
         Função principal que constrói a interface do usuário.
     '''
-    st.markdown("<h2 style='text-align: center;'>Extrator de textos em Imagem usando PyTesseract 🖼️</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>Extrator de textos em Imagem usando PyTesseract 🖼️</h2>", unsafe_allow_html = True)
     st.header('', divider = 'gray')
     
     with st.sidebar:
@@ -25,7 +25,7 @@ def main():
         # Opções de pré-processamento
         st.markdown("### 🔧 Pré-processamento")
         enhance_contrast = st.checkbox('Melhorar contraste', value = True)
-        grayscale = st.checkbox('Converter para escala de cinza', value=False)
+        grayscale = st.checkbox('Converter para escala de cinza', value = False)
 
     if uploaded_file is not None:
         try:
