@@ -75,7 +75,8 @@ def main():
 
     # Exemplo de uso
     with st.expander('ℹ️ Como usar esta aplicação'):
-            st.markdown("""
+            st.markdown(
+            '''
             1. **Upload**: Clique em "Browse files" na barra lateral e selecione uma imagem
             2. **Configuração**: Escolha o idioma do texto e opções de pré-processamento
             3. **Extração**: Clique no botão "Extrair Texto" para processar a imagem
@@ -86,7 +87,8 @@ def main():
             - Evite imagens muito pequenas ou com baixa resolução
             - Certifique-se de que o texto não está muito inclinado
             - Escolha o idioma correto para melhor precisão
-            """)
+            '''
+        )
 
 if __name__ == '__main__':
     main()
