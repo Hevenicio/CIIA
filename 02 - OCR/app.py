@@ -3,7 +3,7 @@ from PIL import Image
 import pytesseract
 import numpy as np
 
-st.set_page_config(page_title = 'OCR com PyTesseract', page_icon = '🖼️')
+st.set_page_config(page_title = 'OCR com PyTesseract', page_icon = '🖼️', layout = 'wide')
 
 def main():
     '''
@@ -13,6 +13,9 @@ def main():
     st.header('', divider = 'gray')
     
     with st.sidebar:
+        #st.logo('img/logo_CIIA.png', size = 'large', )
+        st.image('img/logo_CIIA.png', use_container_width = True)
+
         st.markdown('# 📤 Envie uma imagem')
         uploaded_file = st.file_uploader('-', type = ['jpg', 'jpeg', 'png'],  help = 'Formatos suportados: JPG, JPEG, PNG', label_visibility = 'collapsed')
         
