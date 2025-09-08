@@ -61,8 +61,7 @@ O `pytesseract` requer que o **Tesseract OCR Engine** esteja instalado no seu si
 #### 2. Clonar o Repositório
 
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO>
-cd <NOME_DO_DIRETORIO>
+git clone https://github.com/Hevenicio/CIIA/tree/main/02%20-%20OCR
 ```
 
 #### 3. Criar e Ativar um Ambiente Virtual
