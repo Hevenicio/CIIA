@@ -1,0 +1,7 @@
+.venv/
+venv/
+.env
+.upscale_env/
+.upscale_env
+upscale_env
+__pycache__
