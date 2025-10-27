@@ -4,23 +4,26 @@ Redes Neurais Convolucionais (Convolutional Neural Network - CNN, em inglês) s�
 específicas, cada uma desempenhando uma função essencial no aprendizado e extração
 de características.
 
-A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica, mas geralmente segue a especificada na Figura abaixo.
+A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica, mas geralmente segue a especificada na Figura 1.
 
 <div align="center">
-<img src="imgs/CNN.png" alt="Rede CNN" width="900"/>
+<img src="imgs/CNN.png" alt="Rede CNN" width="700"/>
+  <figcaption><b>Figura 1.</b> Diagrama representando uma Rede Neural Convolucional (CNN).</figcaption>
 </div>
-
 
 ## As principais etapas de funcionamento de uma CNN são:
 
-- Camada de Entrada: recebe e prepara a imagem, transformando cada pixel em um valor processável.
+- Camada de Entrada: recebe e prepara a imagem, transformando cada pixel em um valor processável;
 
 - Camadas de Convolução: as camadas de convolução são a essência das CNNs.
-Cada camada de convolução é composta por um conjunto de filtros (ou kernels) que deslizam pela imagem, calculando a convolução entre o filtro e uma região localizada na imagem. Essa operação de convolução resulta em mapas de características que destacam a presença de características específicas, como bordas, texturas ou padrões em diferentes partes da imagem. Cada filtro aprende a detectar um tipo particular de característica, e a rede combina múltiplos filtros para capturar uma variedade de características em várias escalas e níveis de abstração. 
+Cada camada de convolução é composta por um conjunto de filtros (ou kernels) que deslizam pela imagem, calculando a convolução entre o filtro e uma região localizada na imagem. Essa operação de convolução resulta em mapas de características que destacam a presença de características específicas, como bordas, texturas ou padrões em diferentes partes da imagem. Cada filtro aprende a detectar um tipo particular de característica, e a rede combina múltiplos filtros para capturar uma variedade de características em várias escalas e níveis de abstração. A Figura 2 esquematiza esse conceito;
+
 
 
 <div align="center">
 <img src="imgs/conv.png" alt="Convolução" width="700"/>
+<figcaption><b>Figura 2 .</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel
+K(3×3×1) com passo de 1.</figcaption>
 </div>
 
 
