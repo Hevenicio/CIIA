@@ -1,4 +1,4 @@
-## O que são Redes Neurais Convolucionais (CNNs)?
+# O que são Redes Neurais Convolucionais (CNNs)?
 
 Redes Neurais Convolucionais (Convolutional Neural Network - CNN, em inglês) são arquiteturas de aprendizado profundo projetadas para processamento de dados com estrutura espacial, como imagens. O grande diferencial das CNNs é a habilidade de identificar automaticamente características relevantes nas imagens, sem precisar de intervenção humana para esse processo. A CNN é composta por camadas
 específicas, cada uma desempenhando uma função essencial no aprendizado e extração
@@ -11,7 +11,7 @@ A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica
 </div>
 
 
-As principais etapas de funcionamento de uma CNN são:
+## As principais etapas de funcionamento de uma CNN são:
 
 - Camada de Entrada: recebe e prepara a imagem, transformando cada pixel em um valor processável.
 
@@ -20,7 +20,7 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 
 
 <div align="center">
-<img src="imgs/conv.png" alt="Convolução" width="900"/>
+<img src="imgs/conv.png" alt="Convolução" width="700"/>
 </div>
 
 
