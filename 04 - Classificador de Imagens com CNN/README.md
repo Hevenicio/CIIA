@@ -7,7 +7,7 @@ de características.
 A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica, mas geralmente segue a especificada na Figura abaixo.
 
 <div align="center">
-<img src="imgs/CNN.png" alt="Demonstração do App" width="900"/>
+<img src="imgs/CNN.png" alt="Rede CNN" width="900"/>
 </div>
 
 
@@ -20,7 +20,7 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 
 
 <div align="center">
-<img src="imgs/conv.png" alt="Demonstração do App" width="900"/>
+<img src="imgs/conv.png" alt="Convolução" width="900"/>
 </div>
 
 
