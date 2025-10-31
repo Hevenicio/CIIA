@@ -29,6 +29,11 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
   <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel K(3×3×1) com passo de 1.</span>
 </div>
 
+<div align="center">
+  <img src="imgs/conv.gif" alt="Convolução" width="350" style="margin-right: 45px;"/>
+  <img src="imgs/cnn_gato.gif" alt="CNN classificando gato" width="250"/>
+</div>
+
 - **Camadas de Ativação:** após cada camada de convolução, é aplicada uma função
 de ativação não linear para introduzir não linearidade e melhorar a capacidade de aprendizado na rede. A função de ativação é aplicada elemento a elemento aos
 mapas de características gerados pela convolução. A função ReLU é amplamente
