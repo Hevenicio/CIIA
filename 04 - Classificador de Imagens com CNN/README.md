@@ -29,7 +29,7 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
   <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel K(3×3×1) com passo de 1.</span>
 </div>
 
-Abaixo temos ilustrações esqematimzando como esse processo acontece:
+Abaixo temos ilustrações esquematizando como esse processo acontece:
 
 <div align="center">
   <div style="display:inline-block; text-align:center; margin-right:30px;">
