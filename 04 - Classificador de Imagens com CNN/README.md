@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="imgs/CNN.gif" alt="Demonstração da CNN" width="900"/>
+</div>
+
 # O que são Redes Neurais Convolucionais (CNNs)?
 
 Redes Neurais Convolucionais (Convolutional Neural Network - CNN, em inglês) são arquiteturas de aprendizado profundo projetadas para processamento de dados com estrutura espacial, como imagens. O grande diferencial das CNNs é a habilidade de identificar automaticamente características relevantes nas imagens, sem precisar de intervenção humana para esse processo. A CNN é composta por camadas
