@@ -21,7 +21,7 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 
 
 <div align="center">
-  <img src="imgs/conv.png" alt="Convolução" width="700"/><br>
+  <img src="imgs/conv.png" alt="Convolução" width="900"/><br>
   <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel K(3×3×1) com passo de 1.</span>
 </div>
 
