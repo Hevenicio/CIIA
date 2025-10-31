@@ -20,12 +20,10 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 
 
 
-<figure  align="center">
-<img src="imgs/conv.png" alt="Convolução" width="900"/>
-<figcaption><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel
-K(3×3×1) com passo de 1.</figcaption>
-</figure>
-
+<div align="center">
+  <img src="imgs/conv.png" alt="Convolução" width="700"/><br>
+  <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel K(3×3×1) com passo de 1.</span>
+</div>
 
 - Camadas de Ativação: após cada camada de convolução, é aplicada uma função
 de ativação não linear para introduzir não linearidade e melhorar a capacidade de aprendizado na rede. A função de ativação é aplicada elemento a elemento aos
