@@ -7,8 +7,8 @@ de características.
 A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica, mas geralmente segue a especificada na Figura 1.
 
 <div align="center">
-<img src="imgs/CNN.png" alt="Rede CNN" width="700"/>
-  <figcaption><b>Figura 1.</b> Diagrama representando uma Rede Neural Convolucional (CNN).</figcaption>
+<img src="imgs/CNN.png" alt="Rede CNN" width="900"/>
+  <figcaption><b>Figura 1:</b> Diagrama representando uma Rede Neural Convolucional (CNN).</figcaption>
 </div>
 
 ## As principais etapas de funcionamento de uma CNN são:
@@ -21,8 +21,8 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 
 
 <div align="center">
-<img src="imgs/conv.png" alt="Convolução" width="700"/>
-<figcaption><b>Figura 2 .</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel
+<img src="imgs/conv.png" alt="Convolução" width="900"/>
+<figcaption><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel
 K(3×3×1) com passo de 1.</figcaption>
 </div>
 
