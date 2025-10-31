@@ -6,10 +6,10 @@ de características.
 
 A ordem das camadas em uma CNN pode variar dependendo da arquitetura específica, mas geralmente segue a especificada na Figura 1.
 
-<figure  align="center">
-<img src="imgs/CNN.png" alt="Rede CNN" width="900"/>
-  <figcaption><b>Figura 1:</b> Diagrama representando uma Rede Neural Convolucional (CNN).</figcaption>
-</figure>
+<div align="center">
+  <img src="imgs/CNN.png" alt="Rede CNN" width="900"/><br>
+  <span style="display:block; text-align:center;"><b>Figura 1:</b> Diagrama representando uma Rede Neural Convolucional (CNN).</span>
+</div>
 
 ## As principais etapas de funcionamento de uma CNN são:
 
