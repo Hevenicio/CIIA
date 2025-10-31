@@ -29,10 +29,19 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
   <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(7×7×1) e um kernel K(3×3×1) com passo de 1.</span>
 </div>
 
+Abaixo temos ilustrações esqematimzando como esse processo acontece:
+
 <div align="center">
-  <img src="imgs/conv.gif" alt="Convolução" width="350" style="margin-right: 45px;"/>
-  <img src="imgs/cnn_gato.gif" alt="CNN classificando gato" width="250"/>
+  <div style="display:inline-block; text-align:center; margin-right:30px;">
+    <img src="imgs/conv.gif" alt="Convolução" width="350"/><br>
+    <span><b>Figura 3a:</b> Convolução 2D sendo aplicada em uma imagem.</span>
+  </div>
+  <div style="display:inline-block; text-align:center;">
+    <img src="imgs/cnn_gato.gif" alt="CNN classificando gato" width="250"/><br>
+    <span><b>Figura 3b:</b> CNN classificando uma imagem de gato.</span>
+  </div>
 </div>
+
 
 - **Camadas de Ativação:** após cada camada de convolução, é aplicada uma função
 de ativação não linear para introduzir não linearidade e melhorar a capacidade de aprendizado na rede. A função de ativação é aplicada elemento a elemento aos
