@@ -49,6 +49,11 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
       
       - A ReLU resolve esse problema porque sua derivada é constantemente 1 para entradas positivas, permitindo que os gradientes fluam sem perder intensidade através de múltiplas camadas. Além disso, ReLU é computacionalmente eficiente (apenas uma operação de comparação) e promove **esparsidade** na rede ao desativar neurônios com entradas negativas, o que funciona como uma forma de regularização implícita. Essas vantagens tornaram possível o treinamento de redes muito profundas, como ResNet e VGG, que seriam impraticáveis com sigmoid ou tanh.
 
+      <div align="center">
+        <img src="imgs/ReLU.png" alt="Convolução" width="400"/><br>
+        <span style="display:block; text-align:center;"><b>Figura 2:</b> Um exemplo de convolução entre entrada I(5×5×1) e um kernel K(3×3×1) com passo de 1.</span>
+      </div>
+
 ###
 
 - **Camadas de Pooling:** estas camadas são responsáveis por reduzir a dimensionalidade espacial dos mapas de características gerados pelas camadas de convolução. O pooling é uma técnica que divide o mapa de características em regiões e realiza uma operação, como selecionar o valor máximo (max pooling) ou calcular a média (average pooling), para obter um valor representativo para cada região. Essa redução da resolução espacial permite que a rede se torne mais robusta a pequenas variações na posição das características e também reduz o número de parâmetros na rede, tornando-a mais eficiente computacionalmente.
