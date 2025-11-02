@@ -1,0 +1,5 @@
+.venv/
+venv/
+.cnn_env
+
+__pycache__
