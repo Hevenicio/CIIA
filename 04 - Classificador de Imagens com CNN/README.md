@@ -41,17 +41,17 @@ Abaixo temos ilustrações esquematizam como esse processo acontece:
 
 ###
 - **Camadas de Ativação:** após cada camada de convolução, é aplicada uma função
-de ativação não linear para introduzir não linearidade e melhorar a capacidade de aprendizado na rede. A função de ativação é aplicada elemento a elemento aos mapas de características gerados pela convolução, a função ReLU (Rectified Linear Unit, em inglês) é amplamente usada nas CNNs.
+de ativação não linear para introduzir não linearidade e melhorar a capacidade de aprendizado na rede. A função de ativação é aplicada elemento a elemento aos mapas de características gerados pela convolução. A função ReLU (Rectified Linear Unit, em inglês) é amplamente usada nas CNNs.
 
   - **Por que ReLU é a escolha padrão?**
   
-      - A função **ReLU** é amplamente usada nas CNNs modernas, definida como `f(x) = max(0, x)`. Embora funções clássicas como sigmoid e tanh tenham sido usadas historicamente, elas apresentam o **problema do gradiente desaparecente**: suas derivadas são limitadas a valores pequenos (sigmoid entre 0 e 0,25, tanh entre 0 e 1), fazendo com que os gradientes se tornem exponencialmente menores durante a retropropagação em redes profundas, dificultando o aprendizado nas camadas iniciais.
+      - A função **ReLU** é amplamente usada nas CNNs modernas, definida como `f(x) = max(0, x)`. Embora funções clássicas como Sigmoid e Tanh tenham sido usadas historicamente, elas apresentam o **problema do gradiente desaparecente**: suas derivadas são limitadas a valores pequenos (sigmoid entre 0 e 0,25, tanh entre 0 e 1), fazendo com que os gradientes se tornem exponencialmente menores durante a retropropagação em redes profundas, dificultando o aprendizado nas camadas iniciais, a Figura 3 esquematiza essa três funções.
       
       - A ReLU resolve esse problema porque sua derivada é constantemente 1 para entradas positivas, permitindo que os gradientes fluam sem perder intensidade através de múltiplas camadas. Além disso, ReLU é computacionalmente eficiente (apenas uma operação de comparação) e promove **esparsidade** na rede ao desativar neurônios com entradas negativas, o que funciona como uma forma de regularização implícita. Essas vantagens tornaram possível o treinamento de redes muito profundas, como ResNet e VGG, que seriam impraticáveis com sigmoid ou tanh.
 
       <div align="center">
-        <img src="imgs/ativa.png" alt="ReLU" width="700"/><br>
-        <span style="display:block; text-align:center;"><b>Figura 3:</b> Um exemplo de convolução entre entrada I(5×5×1) e um kernel K(3×3×1) com passo de 1.</span>
+        <img src="imgs/ativa.png" alt="ReLU" width="900"/><br>
+        <span style="display:block; text-align:center;"><b>Figura 3:</b> Comparação entre funções de ativação: Sigmoid, Tanh e ReLU.</span>
       </div>
 ###
 
