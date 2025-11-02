@@ -76,7 +76,7 @@ with st.sidebar:
     st.header('Faça o Upload')
     uploaded_file = st.file_uploader('Escolha seu arquivo PDF', type = 'pdf', label_visibility = 'collapsed')
     
-    if st.button('Processar Documento', disabled=not uploaded_file):
+    if st.button('Processar Documento', disabled = not uploaded_file):
         with st.spinner('Processando... Isso pode levar um momento.'):
             # A função processa o PDF e o resultado (qa_chain) fica em cache
             st.session_state.qa_chain = processar_pdf_e_criar_chain(uploaded_file)

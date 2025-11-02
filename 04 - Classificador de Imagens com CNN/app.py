@@ -1,20 +1,20 @@
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense, BatchNormalization
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.preprocessing import image
-import tensorflow as tf
+from display_gif import gif  # Adicionado conforme sua atualização
 import streamlit as st
 from PIL import Image
 import numpy as np
-import io
 
-# --- Definição das Constantes (do seu notebook) ---
+# --- Definição das Constantes ---
 IMAGE_WIDTH = 128
 IMAGE_HEIGHT = 128
 IMAGE_SIZE = (IMAGE_WIDTH, IMAGE_HEIGHT)
 IMAGE_CHANNELS = 3
 
 # --- Carregamento do Modelo ---
-# Esta função cria a arquitetura do modelo EXATAMENTE como no notebook
+# Esta função cria a arquitetura do modelo exatamete como foi treinada
+@st.cache_resource
 def create_model():
     model = Sequential()
     
@@ -51,7 +51,7 @@ def load_model_weights():
     # Cria a arquitetura
     model = create_model()
     
-    # Define o caminho correto para o modelo
+    # Caminho para o modelo
     model_path = "modelo/model.h5"
     
     # Carrega os pesos salvos
@@ -62,22 +62,23 @@ def load_model_weights():
         st.error(f"Erro ao carregar o modelo '{model_path}'. Certifique-se de que o arquivo está nesse caminho. Erro: {e}")
         return None
 
-
 # Carrega o modelo
 model = load_model_weights()
 
 # --- Interface do Streamlit ---
+gif("imgs/CNN.gif",) 
 st.markdown("<h2 style='text-align: center;'>Classificador de Imagens via CNN: <br>Gato 🐱 ou Cachorro 🐶?</h2>", unsafe_allow_html = True)
-st.header('', divider = 'gray')
-st.markdown("")
-st.markdown("###### Faça o upload de uma imagem (jpg, png, jpeg) e o modelo CNN dirá se é um gato ou um cachorro.")
-st.markdown("######")
+st.divider()
+
 # Definição das classes (baseado no notebook, ImageDataGenerator ordena alfabeticamente)
 # 'cat' (gato) será 0, 'dog' (cachorro) será 1
 class_names = ['Gato', 'Cachorro']
 
-# Uploader de arquivo
-uploaded_file = st.file_uploader("Escolha uma imagem (jpg, png, jpeg) ...", type = ["jpg", "png", "jpeg"], label_visibility = 'collapsed')
+# Uploader de arquivo na sidebar
+with st.sidebar:
+    st.image('imgs/logo_CIIA.png', use_container_width = True)
+    st.markdown("### Faça o upload de uma imagem (jpg, png, jpeg) e o modelo CNN dirá se é um gato ou um cachorro.")
+    uploaded_file = st.file_uploader("Escolha uma imagem (jpg, png, jpeg) ...", type = ["jpg", "png", "jpeg"], label_visibility = 'collapsed')
 
 if uploaded_file is not None and model is not None:
     # Ler e exibir a imagem
@@ -86,48 +87,44 @@ if uploaded_file is not None and model is not None:
         pil_image = Image.open(uploaded_file).convert('RGB')
         
         col1, col2, col3 = st.columns([1, 3, 1])
-        with col2:        
+        # Exibe a imagem carregada na coluna central
+        with col2:     
             st.write("") # Espaçamento
-            st.image(pil_image, caption = "Imagem Carregada", width = 400)
+            st.image(pil_image, width = 400)
             st.write("") # Espaçamento
-            
-        # Botão para classificar
-        if st.button("Classificar Imagem"):
-            with st.spinner("Classificando..."):
-                # --- Pré-processamento da Imagem ---
-                # 1. Redimensionar para o tamanho que o modelo espera (128x128)
-                img_resized = pil_image.resize(IMAGE_SIZE)
+
+        # Botão para classificar na sidebar
+        with st.sidebar:    
+            if st.button("Classificar Imagem", type = 'primary'):
+                with st.spinner("Classificando..."):
+                    # --- Pré-processamento da Imagem ---
+                    # 1. Redimensionar para o tamanho que o modelo espera (128x128)
+                    img_resized = pil_image.resize(IMAGE_SIZE)
+                    
+                    # 2. Converter para um array numpy
+                    img_array = image.img_to_array(img_resized)
+                    
+                    # 3. Rescalar os pixels (como no `validation_datagen`)
+                    img_array = img_array/255.0
+                    
+                    # 4. Expandir as dimensões para criar um "batch" de 1 imagem
+                    # O modelo espera (batch_size, width, height, channels), então (1, 128, 128, 3)
+                    img_batch = np.expand_dims(img_array, axis=0)
+                    
+                    # --- Fazer a Previsão ---
+                    prediction = model.predict(img_batch)
                 
-                # 2. Converter para um array numpy
-                img_array = image.img_to_array(img_resized)
-                
-                # 3. Rescalar os pixels (como no `validation_datagen`)
-                img_array = img_array / 255.0
-                
-                # 4. Expandir as dimensões para criar um "batch" de 1 imagem
-                # O modelo espera (batch_size, width, height, channels), então (1, 128, 128, 3)
-                img_batch = np.expand_dims(img_array, axis=0)
-                
-                # --- Fazer a Previsão ---
-                prediction = model.predict(img_batch)
-                
-                # O 'prediction' será algo como [[0.95, 0.05]]
-                # np.argmax encontra o índice da maior probabilidade
-                class_index = np.argmax(prediction[0])
-                confidence = np.max(prediction[0]) * 100
-                
-                # Obter o nome da classe
-                result_class = class_names[class_index]
-                
-                # --- Exibir o Resultado ---
-                emoji = "🐱" if result_class == "Gato" else "🐶"
-                st.success(f"**Resultado:** {result_class} {emoji}")
-                st.write(f"**Confiança:** {confidence:.2f}%")
-                
-                # Opcional: mostrar as probabilidades brutas
-                st.write("---")
-                st.write(f"Probabilidade de ser Gato: {prediction[0][0]*100:.2f}%")
-                st.write(f"Probabilidade de ser Cachorro: {prediction[0][1]*100:.2f}%")
+                with col2:
+                    class_index = np.argmax(prediction[0])
+                    confidence = np.max(prediction[0])*100
+                            
+                    # Obter o nome da classe
+                    result_class = class_names[class_index]
+                            
+                    # --- Exibir o Resultado ---
+                    emoji = "🐱" if result_class == "Gato" else "🐶"
+                    st.success(f"**Resultado:** {result_class} {emoji}")
+                    st.write(f"**Confiança:** {confidence:.2f}%")
 
     except Exception as e:
         st.error(f"Ocorreu um erro ao processar a imagem: {e}")
