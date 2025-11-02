@@ -45,7 +45,7 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
 
   - **Por que ReLU é a escolha padrão?**
   
-      - A função **ReLU** é amplamente usada nas CNNs modernas, definida como `f(x) = max(0, x)`. Embora funções clássicas como Sigmoid e Tanh tenham sido usadas historicamente, elas apresentam o **problema do gradiente desaparecente**: suas derivadas são limitadas a valores pequenos (sigmoid entre 0 e 0,25, tanh entre 0 e 1), fazendo com que os gradientes se tornem exponencialmente menores durante a retropropagação em redes profundas, dificultando o aprendizado nas camadas iniciais, a Figura 3 esquematiza essa três funções.
+      - A função **ReLU** é amplamente usada nas CNNs modernas, definida como `f(x) = max(0, x)`. Embora funções clássicas como Sigmoid e Tanh tenham sido usadas historicamente, elas apresentam o **problema do gradiente desaparecente**: suas derivadas são limitadas a valores pequenos (sigmoid entre 0 e 0,25, tanh entre 0 e 1), fazendo com que os gradientes se tornem exponencialmente menores durante a retropropagação em redes profundas, dificultando o aprendizado nas camadas iniciais, a Figura 3 esquematiza a comparação dessas três funções.
       
       - A ReLU resolve esse problema porque sua derivada é constantemente 1 para entradas positivas, permitindo que os gradientes fluam sem perder intensidade através de múltiplas camadas. Além disso, ReLU é computacionalmente eficiente (apenas uma operação de comparação) e promove **esparsidade** na rede ao desativar neurônios com entradas negativas, o que funciona como uma forma de regularização implícita. Essas vantagens tornaram possível o treinamento de redes muito profundas, como ResNet e VGG, que seriam impraticáveis com sigmoid ou tanh.
 
