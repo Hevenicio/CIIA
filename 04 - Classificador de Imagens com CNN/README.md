@@ -65,6 +65,15 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
 
 - **Camada de Saída:** apresenta o resultado, como a classe da imagem identificada (ex: “cachorro” ou “gato”).
 
+🚀 Aplicação: Projeto Streamlit
 
-## https://www.kaggle.com/code/uysimty/keras-cnn-dog-or-cat-classification/notebook
-## https://becominghuman.ai/building-an-image-classifier-using-deep-learning-in-python-totally-from-a-beginners-perspective-be8dbaf22dd8
+Para demonstrar esses conceitos em ação, desenvolvi uma aplicação web interativa usando Streamlit!
+
+Foi utilizado um modelo CNN (com arquitetura Keras/TensorFlow) treinado para classificar imagens de gatos 🐱 e cachorros 🐶.
+Nele é possível fazer o upload da sua própria imagem e ver o modelo tomar a decisão em tempo real, mostrando a classe prevista e o nível de confiança.
+Foi um projeto excelente para demonstrar o conhecimento teórico e transformá-lo em uma ferramenta prática e funcional.
+
+🔗 Convido você a testar o app e explorar o código-fonte completo no meu repositório do GitHub:
+[REPOSITÓRIO GITHUB](https://github.com/Hevenicio/CIIA/tree/main/04%20-%20Classificador%20de%20Imagens%20com%20CNN)
+
+#DeepLearning  #InteligenciaArtificial #IA #CNN #Python #Streamlit #TensorFlow #Keras #VisaoComputacional #DataScience #MachineLearning #CIIA
