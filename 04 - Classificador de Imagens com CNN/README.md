@@ -69,6 +69,12 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
 
 Para demonstrar esses conceitos em ação, desenvolvi uma aplicação web interativa usando Streamlit!
 
+<div align="center">
+  <img src="imgs/classificador.png" alt="classificador" width="900"/><br>
+</div>
+
+
+
 Foi utilizado um modelo CNN (com arquitetura Keras/TensorFlow) treinado para classificar imagens de gatos 🐱 e cachorros 🐶.
 Nele é possível fazer o upload da sua própria imagem e ver o modelo tomar a decisão em tempo real, mostrando a classe prevista e o nível de confiança.
 Foi um projeto excelente para demonstrar o conhecimento teórico e transformá-lo em uma ferramenta prática e funcional.
