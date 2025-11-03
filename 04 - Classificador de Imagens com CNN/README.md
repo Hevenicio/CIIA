@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="imgs/CNN.gif" alt="Demonstração da CNN" width="800"/>
+  <img src="imgs/CNN.gif" alt="Demonstração da CNN" width="900"/>
 </div>
 
 # O que são Redes Neurais Convolucionais (CNNs)?
