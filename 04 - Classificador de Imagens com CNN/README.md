@@ -49,10 +49,11 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
       
       - A ReLU resolve esse problema porque sua derivada é constantemente 1 para entradas positivas, permitindo que os gradientes fluam sem perder intensidade através de múltiplas camadas. Além disso, ReLU é computacionalmente eficiente (apenas uma operação de comparação) e promove **esparsidade** na rede ao desativar neurônios com entradas negativas, o que funciona como uma forma de regularização implícita. Essas vantagens tornaram possível o treinamento de redes muito profundas, como ResNet e VGG, que seriam impraticáveis com sigmoid ou tanh.
 
-      <div align="center">
-        <img src="imgs/ativa.png" alt="ReLU" width="900"/><br>
-        <span style="display:block; text-align:center;"><b>Figura 3:</b> Comparação entre funções de ativação: Sigmoid, Tanh e ReLU.</span>
-      </div>
+<div align="center">
+  <img src="imgs/ativa.png" alt="ReLU" width="900"/><br>
+  <span style="display:block; text-align:center;"><b>Figura 3:</b> Comparação entre funções de ativação: Sigmoid, Tanh e ReLU.</span>
+</div>
+
 ###
 
 - **Camadas de Pooling:** estas camadas são responsáveis por reduzir a dimensionalidade espacial dos mapas de características gerados pelas camadas de convolução. O pooling é uma técnica que divide o mapa de características em regiões e realiza uma operação, como selecionar o valor máximo (max pooling) ou calcular a média (average pooling), para obter um valor representativo para cada região. Essa redução da resolução espacial permite que a rede se torne mais robusta a pequenas variações na posição das características e também reduz o número de parâmetros na rede, tornando-a mais eficiente computacionalmente.
@@ -65,7 +66,9 @@ de ativação não linear para introduzir não linearidade e melhorar a capacida
 
 - **Camada de Saída:** apresenta o resultado, como a classe da imagem identificada (ex: “cachorro” ou “gato”).
 
-🚀 Aplicação: Projeto Streamlit
+###
+
+## 🚀 Aplicação: Projeto Streamlit
 
 Para demonstrar esses conceitos em ação, desenvolvi uma aplicação web interativa usando Streamlit!
 
@@ -73,7 +76,7 @@ Para demonstrar esses conceitos em ação, desenvolvi uma aplicação web intera
   <img src="imgs/classificador.png" alt="classificador" width="900"/><br>
 </div>
 
-
+###
 
 Foi utilizado um modelo CNN (com arquitetura Keras/TensorFlow) treinado para classificar imagens de gatos 🐱 e cachorros 🐶.
 Nele é possível fazer o upload da sua própria imagem e ver o modelo tomar a decisão em tempo real, mostrando a classe prevista e o nível de confiança.
