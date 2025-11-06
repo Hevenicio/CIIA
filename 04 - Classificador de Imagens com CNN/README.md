@@ -33,8 +33,8 @@ Cada camada de convolução é composta por um conjunto de filtros (ou kernels) 
 Abaixo temos ilustrações esquematizam como esse processo acontece:
 
 <div align="center">
-  <img src="imgs/conv.gif" alt="Convolução" width="400" style="margin-right: 50px;"/>
-  <img src="imgs/cnn_gato.gif" alt="CNN classificando gato" width="250"/>
+  <img src="imgs/conv.gif" alt="Convolução" width="300" style="margin-right: 25px;"/>
+  <img src="imgs/cnn_gato.gif" alt="CNN classificando gato" width="450"/>
 </div>
 
 ###
